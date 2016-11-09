@@ -13,7 +13,6 @@ class LogicBricksTree(bpy.types.NodeTree):
 	
 	bl_idname = 'LogicBricksTree'
 	bl_label = 'Logic Bricks Nodes'  # Label for nice name display
-	
 	bl_icon = 'GAME'
 	
 	

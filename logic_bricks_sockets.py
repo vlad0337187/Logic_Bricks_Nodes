@@ -13,12 +13,12 @@ class SensorToControllerSocket(bpy.types.NodeSocket):
 	bl_label = 'Sensor to controller socket'  # Label for nice name display
 
 	# Enum items list
-	my_items = [
-		(True, "True", "True bool value"),
-		(False, "False", "False bool value"),
-		(None, "None", "None value") ]
+	sensor_controller_items = [
+		("True", "True", "True logic value"),
+		("False", "False", "False logic value"),
+		("None", "None", "None value") ]
 
-	myEnumProperty = bpy.props.EnumProperty(name="Impulse", description="Logic brick True or False impulse, or None.", items=my_items, default=None)
+	sensor_controller_enum_property = bpy.props.EnumProperty(name="Impulse", description="Logic brick True or False impulse, or None.", items=sensor_controller_items, default='None')
 
 
 	def draw(self, context, layout, node, text):
@@ -43,11 +43,11 @@ class ControllerToActuatorSocket(bpy.types.NodeSocket):
 	bl_label = 'Controller to actuator socket'  # Label for nice name display
 
 	# Enum items list
-	my_items = [
-		(True, "True", "True bool value"),
-		(False, "False", "False bool value") ]
+	controller_actuator_items = [
+		('True', "True", "True logic value"),
+		('False', "False", "False logic value") ]
 
-	myEnumProperty = bpy.props.EnumProperty(name="State", description="True\False - activate\not activate actuator.", items=my_items, default=False)
+	controller_actuator_enum_property = bpy.props.EnumProperty(name="State", description="True\False - activate\not activate actuator.", items=controller_actuator_items, default='False')
 
 	def draw(self, context, layout, node, text):
 		'''Draws socket input value.
