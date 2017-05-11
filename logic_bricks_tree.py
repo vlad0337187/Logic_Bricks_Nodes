@@ -1,4 +1,5 @@
 '''Contains tree class for logic nodes.
+rev.1
 '''
 
 
@@ -27,9 +28,13 @@ class LogicBricksTree(bpy.types.NodeTree):
 
 
 def register_logic_bricks_tree():
+	"""Is launched from logic_bricks.py from register () function.
+	"""
 	bpy.utils.register_class(LogicBricksTree)
 
 
 
 def unregister_logic_bricks_tree():
+	"""Is launched from logic_bricks.py from register () function.
+	"""
 	bpy.utils.unregister_class(LogicBricksTree)

@@ -1,7 +1,9 @@
 '''Defines sockets for logic_node module.
+rev.1
 '''
 
 import bpy
+from logic_bricks_colors import *
 
 
 
@@ -31,7 +33,7 @@ class SensorToControllerSocket(bpy.types.NodeSocket):
 
 	# Socket color
 	def draw_color(self, context, node):
-		return (0.1, 0.8, 0.216, 0.5)
+		return sensor_color
 
 
 
@@ -59,7 +61,7 @@ class ControllerToActuatorSocket(bpy.types.NodeSocket):
 
 	# Socket color
 	def draw_color(self, context, node):
-		return (0.8, 0.8, 0.1, 0.5)
+		return actuator_color
 
 
 
@@ -69,11 +71,15 @@ class ControllerToActuatorSocket(bpy.types.NodeSocket):
 
 
 def register_logic_bricks_sockets():
+	"""Is launched from logic_bricks.py from register () function.
+	"""
 	bpy.utils.register_class(SensorToControllerSocket)
 	bpy.utils.register_class(ControllerToActuatorSocket)
 
 
 
 def unregister_logic_bricks_sockets():
+	"""Is launched from logic_bricks.py from register () function.
+	"""
 	bpy.utils.unregister_class(SensorToControllerSocket)
 	bpy.utils.unregister_class(ControllerToActuatorSocket)
